@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Adriana 💛</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #fff9c4,
+                    #fffde7
+                );
+
+            overflow: hidden;
+
+            font-family: Georgia, serif;
+        }
+
+        .mensaje {
+
+            position: absolute;
+
+            top: 6%;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 90%;
+
+            text-align: center;
+
+            z-index: 30;
+
+            padding: 20px;
+        }
+
+
+        .mensaje h1 {
+
+            color: #f57f17;
+
+            font-size: 2.5rem;
+
+            margin-bottom: 18px;
+
+            min-height: 60px;
+        }
+
+
+        .mensaje p {
+
+            color: #f9a825;
+
+            font-size: 1.25rem;
+
+            line-height: 1.7;
+
+            min-height: 40px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .contenedor-flores {
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: 0;
+
+            width: 100%;
+
+            height: 58vh;
+        }
+
+
+        .flor {
+
+            position: absolute;
+
+            bottom: 0;
+
+            width: 180px;
+
+            height: 320px;
+
+            margin-left: -90px;
+
+            opacity: 0;
+
+            transform-origin: bottom center;
+
+            animation:
+                aparecer 2s ease forwards,
+                balancear 4s ease-in-out infinite;
+        }
+
+        .tallo {
+
+            position: absolute;
+
+            bottom: 0;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 9px;
+
+            height: 195px;
+
+            background:
+                linear-gradient(
+                    to right,
+                    #2e7d32,
+                    #43a047,
+                    #2e7d32
+                );
+
+            border-radius: 10px;
+
+            z-index: 1;
+
+            transform-origin: bottom;
+
+            animation:
+                crecerTallo 2s ease-out forwards;
+        }
+
+        .cabeza-flor {
+
+            position: absolute;
+
+            bottom: 155px;
+
+            left: 50%;
+
+            width: 155px;
+
+            height: 155px;
+
+            transform:
+                translateX(-50%);
+
+            z-index: 3;
+        }
+
+        .petalo {
+
+            position: absolute;
+
+            width: 54px;
+
+            height: 85px;
+
+            top: 50%;
+
+            left: 50%;
+
+            margin-left: -27px;
+
+            margin-top: -76px;
+
+            border-radius:
+                55% 55% 50% 50%;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #ffeb3b,
+                    #ffc107
+                );
+
+            transform-origin:
+                50% 76px;
+
+            opacity: 0;
+        }
+
+
+        .centro {
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            width: 58px;
+
+            height: 58px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #ffa000,
+                    #ff8f00
+                );
+
+            border-radius: 50%;
+
+            z-index: 10;
+
+            opacity: 0;
+
+            animation:
+                aparecerCentro
+                0.8s
+                ease
+                forwards;
+
+            animation-delay: 3s;
+
+            box-shadow:
+                inset 0 0 8px
+                rgba(0,0,0,0.15),
+
+                0 2px 6px
+                rgba(0,0,0,0.15);
+        }
+
+
+        @keyframes crecerTallo {
+
+            0% {
+
+                height: 0;
+
+                opacity: 0;
+            }
+
+            100% {
+
+                height: 195px;
+
+                opacity: 1;
+            }
+        }
+
+        @keyframes aparecer {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translateY(80px);
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        @keyframes abrir {
+
+            0% {
+
+                opacity: 0;
+
+                scale: 0;
+            }
+
+            100% {
+
+                opacity: 1;
+
+                scale: 1;
+            }
+        }
+
+        @keyframes aparecerCentro {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(0);
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1);
+            }
+        }
+
+
+
+        @keyframes balancear {
+
+            0% {
+
+                transform:
+                    rotate(-2deg);
+            }
+
+            50% {
+
+                transform:
+                    rotate(2deg);
+            }
+
+            100% {
+
+                transform:
+                    rotate(-2deg);
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            .mensaje {
+
+                top: 4%;
+
+                width: 95%;
+            }
+
+
+            .mensaje h1 {
+
+                font-size: 1.8rem;
+            }
+
+
+            .mensaje p {
+
+                font-size: 1rem;
+
+                line-height: 1.5;
+            }
+
+
+            .flor {
+
+                width: 150px;
+
+                height: 280px;
+
+                margin-left: -75px;
+            }
+
+
+            .cabeza-flor {
+
+                transform:
+                    translateX(-50%)
+                    scale(0.85);
+
+                transform-origin:
+                    bottom center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="mensaje">
+
+        <h1 id="titulo"></h1>
+
+        <p id="p1"></p>
+
+        <p id="p2"></p>
+
+        <p id="p3"></p>
+
+        <p id="p4"></p>
+
+    </div>
+
+    <div
+        class="contenedor-flores"
+        id="contenedor">
+    </div>
+
+
+
+    <script>
+
+        function crearFlor(x, demora) {
+
+
+            const flor =
+                document.createElement("div");
+
+
+            flor.className = "flor";
+
+
+            flor.style.left =
+                x + "%";
+
+
+
+            flor.style.animationDelay =
+                `${demora}s, ${demora + 2}s`;
+
+
+            const tallo =
+                document.createElement("div");
+
+
+            tallo.className =
+                "tallo";
+
+
+            tallo.style.animationDelay =
+                `${demora}s`;
+
+
+            flor.appendChild(tallo);
+
+
+            const cabeza =
+                document.createElement("div");
+
+
+            cabeza.className =
+                "cabeza-flor";
+
+            for (
+                let i = 0;
+                i < 8;
+                i++
+            ) {
+
+
+                const petalo =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                petalo.className =
+                    "petalo";
+
+
+                const angulo =
+                    i * 45;
+
+
+                petalo.style.transform =
+                    `rotate(${angulo}deg)`;
+
+
+                petalo.style.animation =
+                    "abrir 1.2s ease forwards";
+
+
+                petalo.style.animationDelay =
+                    `${demora + 2}s`;
+
+
+                cabeza.appendChild(
+                    petalo
+                );
+
+            }
+
+            const centro =
+                document.createElement(
+                    "div"
+                );
+
+
+            centro.className =
+                "centro";
+
+
+            centro.style.animationDelay =
+                `${demora + 3.1}s`;
+
+
+            cabeza.appendChild(
+                centro
+            );
+
+
+            flor.appendChild(
+                cabeza
+            );
+
+
+            return flor;
+
+        }
+
+
+        function escribirTexto(
+            elemento,
+            texto,
+            velocidad
+        ) {
+
+
+            return new Promise(
+                resolve => {
+
+
+                    let i = 0;
+
+
+                    elemento.textContent =
+                        "";
+
+
+                    function escribir() {
+
+
+                        if (
+                            i <
+                            texto.length
+                        ) {
+
+
+                            elemento.textContent +=
+                                texto.charAt(i);
+
+
+                            i++;
+
+
+                            setTimeout(
+                                escribir,
+                                velocidad
+                            );
+
+                        }
+
+                        else {
+
+
+                            resolve();
+
+                        }
+
+                    }
+
+
+                    escribir();
+
+                }
+            );
+
+        }
+
+
+        function esperar(
+            tiempo
+        ) {
+
+
+            return new Promise(
+                resolve => {
+
+                    setTimeout(
+                        resolve,
+                        tiempo
+                    );
+
+                }
+            );
+
+        }
+
+
+        async function mostrarMensaje() {
+
+    
+            await esperar(5200);
+
+            await escribirTexto(
+
+                document.getElementById(
+                    "titulo"
+                ),
+
+                "💛 Para ti, Adriana 💛",
+
+                90
+
+            );
+
+
+            await esperar(500);
+
+
+
+            /* PRIMER PÁRRAFO */
+
+            await escribirTexto(
+
+                document.getElementById(
+                    "p1"
+                ),
+
+                "Las flores amarillas representan la alegría, la amistad que brilla y la luz que das a mi vida.",
+
+                45
+
+            );
+
+
+            await esperar(500);
+
+
+            await escribirTexto(
+
+                document.getElementById(
+                    "p2"
+                ),
+
+                "Gracias por estar siempre, por tu cariño sincero, por ser esa amiga que siempre está ahí.",
+
+                45
+
+            );
+
+
+            await esperar(500);
+
+            await escribirTexto(
+
+                document.getElementById(
+                    "p3"
+                ),
+
+                "Que la vida te devuelva todo lo bonito que me das.",
+
+                55
+
+            );
+
+
+            await esperar(500);
+
+            await escribirTexto(
+
+                document.getElementById(
+                    "p4"
+                ),
+
+                "Te quiero mucho 💛✨",
+
+                90
+
+            );
+
+        }
+
+
+        const contenedor =
+            document.getElementById(
+                "contenedor"
+            );
+
+
+        const posiciones = [
+
+            1,
+
+            10,
+
+            20,
+
+            30,
+
+            40,
+
+            50,
+
+            60,
+
+            70,
+
+            80,
+
+            90,
+
+            99,
+
+        ];
+
+
+        posiciones.forEach(
+
+            (posicion, i) => {
+
+
+                const flor =
+                    crearFlor(
+                        posicion,
+                        i * 0.35
+                    );
+
+
+                contenedor.appendChild(
+                    flor
+                );
+
+            }
+
+        );
+
+        setTimeout(
+
+            mostrarMensaje,
+
+            500
+
+        );
+
+
+    </script>
+
+</body>
+
+</html>
